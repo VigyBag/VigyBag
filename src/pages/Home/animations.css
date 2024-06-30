@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+.animated-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.left-text,
+.right-text {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.3;
+    /* Adjusted line height */
+    animation: showup 8s infinite;
+}
+
+.right-text {
+    overflow: hidden;
+    width: 0px;
+    animation: reveal 8s infinite;
+}
+
+.right-text span {
+    margin-left: -300px;
+    animation: slidein 8s infinite;
+}
+
+@keyframes showup {
+    0% {    
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slidein {
+    0% {
+        margin-left: 200px;
+    }
+
+    20% {
+        margin-left: 200px;
+    }
+
+    35% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        width: 0px;
+    }
+
+    20% {
+        opacity: 1;
+        width: 0px;
+    }
+
+    30% {
+        width: 300px;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width: 200px;
+    }
+}
+
+.fade-in-3d-left {
+    animation: fadeIn3DLeft 1s ease-out forwards;
+}
+
+.fade-in-3d {
+    animation: fadeIn3D 1s ease-out forwards;
+}
+
+@keyframes fadeIn3D {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@keyframes fadeIn3DLeft {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 3s;
+}
+
+.delay-3 {
+    animation-delay: 3.5s;
+}
+
+.delay-4 {
+    animation-delay: 4s;
+}
+
+.delay-5{
+    animation-delay: 4.5s;
+}

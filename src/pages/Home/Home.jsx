@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 import CategoryCard from "../../components/HomPageCard/CategoryCard";
 import LatestInMarketCard from "../../components/HomPageCard/LatestInMarketCard";
 import background from "../../assets/background.png";
 import app from "../../assets/app.png";
 import googlePlay from "../../assets/google-play.png";
 import mobile from "../../assets/mobile.png";
+import "./animations.css"; // Import the animations CSS
 
 // Import category images
 import customisedGiftsImg from "../../assets/Customized-Gifts.png";
@@ -115,32 +115,26 @@ const Home = () => {
         >
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
             <div className="w-full md:w-2/3 lg:w-1/2 pr-0 md:pr-8 text-center md:text-left">
-              <h1 className="text-[33px] sm:text-4xl md:text-[53px] font-bold mb-4">
-                Welcome to <span className="text-green-700">VigyBag!</span>
-              </h1>
-              <h2
-                className="text-[25px] sm:text-2xl md:text-[33px] font-semibold mb-6"
-                style={{ lineHeight: "1.5" }}
-              >
+              <div class="animated-text">
+                <div class="left-text text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Welcome to</div>
+                <div class="right-text text-green-700 text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                  <span>&nbsp;VigyBag!</span>
+                </div>
+              </div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 fade-in-3d-left delay-2">
                 Your Eco-Friendly Shopping Heaven
               </h2>
-              <p
-                className="mb-6 text-gray-700 text-[20px] sm:text-[23px]"
-                style={{ lineHeight: "1.5" }}
-              >
-                At VigyBag, we curate the finest earth-friendly essentials to
-                help you reduce your environmental footprint without
-                compromising on quality or style. Shop smart, live green, and
-                embrace a sustainable future with VigyBag.
+              <p className="mb-6 text-gray-700 text-sm sm:text-base fade-in-3d delay-3">
+                At VigyBag, we curate the finest earth-friendly essentials to help you reduce your environmental footprint without compromising on quality or style. Shop smart, live green, and embrace a sustainable future with VigyBag.
               </p>
               <button
-                onClick={scrollToSection}
-                className="bg-green-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-green-800 transition duration-300"
-              >
+                type="button"
+                class="bg-green-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-green-800 transition duration-300 fade-in-3d delay-5">
                 Shop Now
               </button>
             </div>
           </div>
+
         </section>
 
         {/* Popular Categories */}
