@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38b2e442-4924-4f31-a7d1-ca3e2c8b4cac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deviceManager.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/VigyBag/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Android/VigyBag/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/VigyBag/app/src/main/java/com/example/vigybag/activity/LoginActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/VigyBag/app/src/main/java/com/example/vigybag/activity/OTPActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/VigyBag/app/src/main/java/com/example/vigybag/activity/RegisterActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/VigyBag/app/src/main/java/com/example/vigybag/activity/SignUpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Android/VigyBag/app/src/main/java/com/example/vigybag/activity/SignUpActivity.kt" afterDir="false" />
-    </list>
+    <list default="true" id="38b2e442-4924-4f31-a7d1-ca3e2c8b4cac" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +12,18 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
