@@ -1,34 +1,57 @@
 const User = require("../models/User.js");
 const bcrypt = require("bcrypt");
 
-// Signup controller
 exports.signup = async (req, res) => {
   try {
-    const { fullname, email, password, phone } = req.body;
+    const { username, email, password, phone } = req.body;
 
     // Validate if all required fields are present
-    if (!fullname || !email || !password || !phone) {
+    if (!username || !email || !password || !phone) {
       return res.status(400).json({ message: "All fields are required" });
+    }
+
+    // Validate email format
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    if (!emailRegex.test(email)) {
+      return res
+        .status(400)
+        .json({ message: "Please enter a valid email address" });
+    }
+
+    // Validate phone number format
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+      return res
+        .status(400)
+        .json({ message: "Please enter a 10-digit phone number" });
+    }
+
+    // Check if username already exists
+    const existingUsername = await User.findOne({ username });
+    if (existingUsername) {
+      return res.status(400).json({ message: "Username already exists" });
+    }
+
+    // Check if email already exists
+    const existingEmail = await User.findOne({ email });
+    if (existingEmail) {
+      return res.status(400).json({ message: "Email already exists" });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await User.create({
-      fullname,
+      username,
       email,
       password: hashedPassword,
       phone,
     });
+
     res.status(201).json({ message: "User created successfully", newUser });
   } catch (error) {
-    // Handle validation errors or other errors
-    if (error.code === 11000 && error.keyPattern && error.keyPattern.fullname) {
-      return res.status(400).json({ message: "Username already exists" });
-    }
     res.status(500).json({ error: error.message });
   }
 };
 
-// Login controller remains unchanged
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;

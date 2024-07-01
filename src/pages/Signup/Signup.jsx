@@ -7,12 +7,9 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-// import { toast, ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 
-// Define CSS class names for reuse
 const containerClasses =
   "flex items-center bg-[#fff0e3ff] p-2 text-black rounded-xl";
 const inputClasses =
@@ -26,7 +23,6 @@ const formSectionClasses =
 const illustrationSectionClasses =
   "rounded-lg hidden md:flex w-full md:w-1/2 p-8 items-center justify-center bg-[#c1cfabff] overflow-hidden";
 
-// FormInput component to create input fields with icons
 const FormInput = ({ icon, placeholder, type = "text", value, onChange }) => {
   return (
     <div className={containerClasses}>
@@ -42,19 +38,18 @@ const FormInput = ({ icon, placeholder, type = "text", value, onChange }) => {
   );
 };
 
-// SignUpForm component to create the signup form UI
 const SignUpForm = () => {
-  const [fullName, setFullName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      // toast.error("Passwords do not match");
       alert("Passwords do not match");
       console.log("Passwords do not match");
       return;
@@ -64,28 +59,36 @@ const SignUpForm = () => {
       const response = await axios.post(
         "http://localhost:8080/api/auth/signup",
         {
-          fullname: fullName, // Ensure correct field name 'fullname'
+          username,
           email,
           password,
           phone,
         }
       );
-      // toast.success(response.data.message);
+
       alert(response.data.message);
-      console.log(response.data.message);
+      navigate("/login");
+      setUsername("");
+      setEmail("");
+      setPhone("");
+      setPassword("");
+      setConfirmPassword("");
     } catch (error) {
-      // toast.error(error.response.data.error || "Signup failed");
-      alert("Signup failed" || error.response.data.error);
-      console.log(error.response.data.error);
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        alert(error.response.data.message);
+        console.log(error.response.data.message);
+      }
     }
   };
 
   return (
     <>
-      {/* <ToastContainer /> */}
       <div className={formContainerClasses}>
         <div className={cardClasses}>
-          {/* Form section */}
           <div className={formSectionClasses}>
             <div className="flex justify-center mb-3">
               <img
@@ -98,14 +101,12 @@ const SignUpForm = () => {
             <h2 className="text-3xl font-semibold text-center mb-6 text-white">
               Sign Up
             </h2>
-
-            {/* Signup form */}
             <form className="space-y-4" onSubmit={handleSignup}>
               <FormInput
                 icon={<CgProfile />}
-                placeholder="Full Name"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
               <FormInput
                 icon={<MdEmail />}
@@ -116,7 +117,7 @@ const SignUpForm = () => {
               />
               <FormInput
                 icon={<IoCall />}
-                type="text" // Changed to 'text' from 'Number'
+                type="text"
                 placeholder="Phone Number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -142,14 +143,13 @@ const SignUpForm = () => {
                 </label>
               </div>
               <button
-                type="submit" // Added type attribute for form submission
+                type="submit"
                 className="w-full bg-green-700 text-white py-2 rounded-xl"
               >
                 Sign Up
               </button>
             </form>
 
-            {/* Social signup buttons */}
             <div className="text-center mt-4">
               <p className="text-zinc-400 mb-2">Or sign up with:</p>
               <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
@@ -178,7 +178,6 @@ const SignUpForm = () => {
             </p>
           </div>
 
-          {/* Illustration section */}
           <div className={illustrationSectionClasses}>
             <img
               src={signUp}
