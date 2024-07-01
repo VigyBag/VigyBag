@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    color: #333;
+}
+
+.nav_menu .nav_link li a {
+    cursor: pointer;
+}
+
+.containerprivacy {
+    max-width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    /* background: #f6ebe4; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.containerprivacy .head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.containerprivacy main {
+    margin-top: 110px;
+}
+
+
+.containerprivacy .head h1 {
+    font-size: x-large;
+    font-weight: bolder;
+    margin-top: -90px;
+    margin-right: 60px;
+    margin-bottom: 36px;
+    color: rgb(77, 146, 78);
+}
+
+.a {
+    color: blue;
+}
+
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: x-large;
+    font-weight: bold;
+    color: #555;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: x-large;
+    font-weight: bold;
+    color: #555;
+    padding-bottom: 5px;
+}
+
+.table,
+.tr,
+.td,
+.th {
+    padding: 13px;
+    border: 2px solid black;
+}

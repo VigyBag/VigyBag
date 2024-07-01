@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "162312008525",
+    "firebase_url": "https://vigybag-806d2-default-rtdb.firebaseio.com",
+    "project_id": "vigybag-806d2",
+    "storage_bucket": "vigybag-806d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162312008525:android:4a96d13e97c7f3e89d7d04",
+        "android_client_info": {
+          "package_name": "com.example.vigybag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162312008525-iejtc3c3sosqf1u8otp0jqd07o6kkv62.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vigybag",
+            "certificate_hash": "c30d7fc2ce3888d7d9abc6c8b48d018b5ea49fa9"
+          }
+        },
+        {
+          "client_id": "162312008525-f5vnoc0lb5tv4563en2uq6ckddancgia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYESUUfdfkVWfThwf0-RV3hH75Ichjwrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162312008525-f5vnoc0lb5tv4563en2uq6ckddancgia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

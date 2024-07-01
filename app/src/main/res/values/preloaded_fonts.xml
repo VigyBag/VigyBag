@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/inika</item>
+        <item>@font/inika_bold</item>
+        <item>@font/inria_sans</item>
+        <item>@font/inria_sans_bold</item>
+    </array>
+</resources>
